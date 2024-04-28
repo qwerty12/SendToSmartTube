@@ -1,0 +1,37 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.sendtosmarttube'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.sendtosmarttube"
+        minSdk 31
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        resourceConfigurations ['en']
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation libs.hiddenapibypass
+    implementation libs.sun.security.android
+    implementation libs.libadb.android
+}
